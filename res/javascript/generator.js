@@ -1,7 +1,7 @@
 function send() {
     const texts = document.querySelectorAll("div textarea");
     const result = document.querySelector("textarea[readonly]");
-    const level = document.getElementById("coherence").value;
+    const string = document.getElementById("string").value;
     let str = "";
 
     texts.forEach(text => str += text.value + "@separatorphp@");
@@ -12,7 +12,7 @@ function send() {
     const formData = new FormData();
     formData.append('file', file);
 
-    formData.append('level', level);
+    formData.append('string', string);
     fetch('../php/scripts.php', {
         method: 'POST',
         body: formData
