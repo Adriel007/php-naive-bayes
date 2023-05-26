@@ -12,14 +12,32 @@
 <body>
     <h2>Grupos:</h2>
     <div class="div-textareas">
-        <textarea placeholder="Insira seu texto que representa um grupo aqui..."></textarea>
-        <textarea placeholder="Insira seu texto que representa um grupo aqui..."></textarea>
+        <fieldset>
+            <legend contenteditable="true">Grupo 1</legend>
+            <div>
+                <textarea placeholder="Insira seu texto que representa um grupo aqui..."></textarea>
+            </div>
+            <div>
+                <button>-</button>
+                <button>+</button>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend contenteditable="true">Grupo 2</legend>
+            <div>
+                <textarea placeholder="Insira seu texto que representa um grupo aqui..."></textarea>
+            </div>
+            <div>
+                <button>-</button>
+                <button>+</button>
+            </div>
+        </fieldset>
     </div>
     <textarea readonly placeholder="Resultado..."></textarea>
 
     <div class="div-buttons">
-        <button onclick="removeTextArea()">Remover caixa de grupo</button>
-        <button onclick="newTextArea()">Adicionar caixa de grupo</button>
+        <button onclick="removeGroup()">Remover caixa de grupo</button>
+        <button onclick="newGroup()">Adicionar caixa de grupo</button>
     </div>
 
     <h2>Configurações:</h2>

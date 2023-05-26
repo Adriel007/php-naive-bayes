@@ -26,6 +26,44 @@ function send() {
         });
 }
 
+function newGroup() {
+    const container = document.getElementsByClassName("div-textareas")[0];
+    const counter = container.children.length + 1;
+    const group = {
+        fieldset: document.createElement("fieldset"),
+        legend: document.createElement("legend"),
+        divTextarea: document.createElement("div"),
+        textarea: document.createElement("textarea"),
+        divButton: document.createElement("div"),
+        less: document.createElement("button"),
+        more: document.createElement("button"),
+    };
+
+    group.legend.textContent = "Grupo " + counter;
+    group.legend.contentEditable = "true";
+    group.textarea.placeholder = "Insira seu texto que representa um grupo aqui...";
+    group.less.textContent = "-";
+    group.more.textContent = "+";
+
+    container.appendChild(group.fieldset);
+
+    group.fieldset.appendChild(group.legend);
+    group.fieldset.appendChild(group.divTextarea);
+    group.fieldset.appendChild(group.divButton);
+
+    group.divTextarea.appendChild(group.textarea);
+
+    group.divButton.appendChild(group.less);
+    group.divButton.appendChild(group.more);
+}
+
+function removeGroup() {
+    const container = document.getElementsByClassName("div-textareas")[0];
+
+    if (container.children.length >= 3)
+        container.children[container.children.length - 1].remove();
+}
+
 function newTextArea() {
     const textarea = document.createElement("textarea");
     const container = document.querySelector("div");

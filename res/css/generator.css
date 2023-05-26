@@ -25,15 +25,51 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: fit-content;
 }
 
-.div-textareas textarea,
+.div-textareas fieldset {
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    border: solid 3px #fff;
+    border-radius: 15px;
+}
+
+.div-textareas fieldset legend {
+    font-weight: bold;
+    padding: 5px;
+    color: #fff;
+    text-align: center;
+    border: solid 3px #fff;
+    background-color: #000;
+    border-radius: 15px;
+}
+
+.div-textareas fieldset div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: fit-content;
+}
+
+
+.div-textareas fieldset div textarea,
 .div-classify textarea {
     background-color: #000;
     border: solid 3px #666;
+}
+
+.div-textareas fieldset div button {
+    width: 50px;
+    height: 50px;
+    font-size: 2em;
+    border-radius: 50%;
 }
 
 input {
