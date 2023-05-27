@@ -26,6 +26,6 @@ Para executar o projeto, é necessário ter instalado:
 3. Inicie o servidor Apache e o serviço do MySQL no painel de controle do XAMPP.
 4. Coloque os arquivos do projeto dentro da pasta `htdocs` do XAMPP.
 5. Acesse o projeto através do navegador utilizando o endereço `http://localhost/nome-do-projeto`.
-6. Execute o arquivo `index.php` para treinar o modelo e realizar a classificação em um conjunto de dados de teste.
+6. Execute o arquivo `index.html` para treinar o modelo e realizar a classificação em um conjunto de dados de teste.
 7. Analise os resultados gerados pelo algoritmo Naive Bayes em PHP.
 
