@@ -15,21 +15,21 @@
         <fieldset>
             <legend contenteditable="true">Grupo 1</legend>
             <div>
-                <textarea placeholder="Insira seu texto que representa um grupo aqui..."></textarea>
+                <textarea placeholder="Insira um texto para o treinamento..."></textarea>
             </div>
             <div>
-                <button>-</button>
-                <button>+</button>
+                <button onclick="removeTextArea(this)" class="gp-1">-</button>
+                <button onclick="newTextArea(this)" class="gp-1">+</button>
             </div>
         </fieldset>
         <fieldset>
             <legend contenteditable="true">Grupo 2</legend>
             <div>
-                <textarea placeholder="Insira seu texto que representa um grupo aqui..."></textarea>
+                <textarea placeholder="Insira um texto para o treinamento..."></textarea>
             </div>
             <div>
-                <button>-</button>
-                <button>+</button>
+                <button onclick="removeTextArea(this)" class="gp-2">-</button>
+                <button onclick="newTextArea(this)" class="gp-2">+</button>
             </div>
         </fieldset>
     </div>
@@ -41,16 +41,6 @@
     </div>
 
     <h2>Configurações:</h2>
-
-    <!--
-
-
-        LAYOUT VAI TER QUE SER DIFERENTE, DIVS COM TEXTAREAS POR GRUPO, SE VIRA PRA CONCATENAR TUDO
-        NO POST, MAS O NAIVE BAYES TRABALHA COM MATRIZ
-
-
-    -->
-
     <div class="div-classify">
         <textarea placeholder="Insira um texto a ser classificado" id="string"></textarea>
         <button onclick="send()">Classificar</button>

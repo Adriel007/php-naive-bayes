@@ -9,24 +9,30 @@
 
 <body>
     <p>
-        Para gerar texto com base em uma coleção de textos, primeiro contaremos todas as palavras que aparecem na
-        coleção. Depois, para cada palavra armazenaremos as palavras que subsequentes dessa. Exemplo:
+        Naive Bayes é um dos algoritmos de classificação mais simples e rápidos que existem, sendo um dos mais indicado
+        ao lidar com grandes volumes de dados. É usado com sucesso em várias aplicações, tais como:
     </p>
-    <code>
-        "Esse é um exemplo de texto."<br>
-        Número de palavras: 6<br>
-        Armazenando (palavra, palavra subsequente):<br>
-        [(Esse, é),(é, um),(um, exemplo),(exemplo, de),(de, texto.)]
-    </code>
-    <p>
-        Para testar o algoritmo, precisamos de uma coleção de texto. Quanto mais texto sobre o mesmo assunto, melhor.
-        Além disso, o ideal é que os textos apresentem “similaridade” entre si. Nada melhor do que a prática para
-        entendermos esses detalhes.
-    </p>
-    <p>
-        Similaridade está entre aspas por que não se trata de similaridade semantica e sim de temas semelhantes. Não
-        adianta juntarmos textos sobre Impressoras e Jardins e esperar que geraremos algo que faça o mínimo de sentido
-        (Teste, vale a pena).
+    <ul>
+        <li>
+            Filtragem de spam: funcionam correlacionando o uso de tokens (normalmente palavras, ou às vezes outras
+            coisas), com e-mails de spam e não spam e, em seguida, usa o teorema de Bayes para calcular a probabilidade
+            de um e-mail ser ou não spam;
+        </li>
+        <li>
+            Classificação de texto: pode ser aceito como a abordagem probabilística para classificar documentos no caso
+            de reconhecer a frequência de uma palavra específica em um documento de texto;
+        </li>
+        <li>
+            Análise de sentimentos: atribui uma probabilidade de que uma determinada palavra ou frase seja considerada
+            positiva ou negativa ao comparar palavras umas contra as outras;
+        </li>
+        <li>
+            Sistemas de recomendação: usa técnicas de aprendizado de máquina e mineração de dados para filtrar
+            informações não vistas e prever se um usuário gostaria de um determinado recurso ou não.
+        </li>
+
+
+    </ul>
     </p>
 
     <h4>Fontes:</h4>
