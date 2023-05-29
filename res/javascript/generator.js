@@ -29,10 +29,9 @@ function send() {
             data = data.result;
             console.log(data)
             let str = "Seu texto foi classificado na seguinte ordem:\n";
-            for (const key in data) {
-                console.log(key)
+            for (const key in data)
                 str += `${key}: ${(data[key] * 100).toFixed(3)}%\n`;
-            }
+
             result.value = str;
         })
         .catch(error => {
