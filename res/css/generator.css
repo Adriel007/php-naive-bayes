@@ -72,16 +72,6 @@ body {
     border-radius: 50%;
 }
 
-input {
-    background-color: #000;
-    color: #fff;
-    padding: 5px;
-    border-radius: 15px;
-    border: solid 3px #666;
-    margin: 2px;
-    text-align: center;
-}
-
 textarea {
     background-color: #666;
     color: #fff;
