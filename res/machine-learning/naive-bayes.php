@@ -39,9 +39,27 @@ class Naive_Bayes
             $sum += $scores[$subject];
         }
 
-        $total = 1 / $sum;
-        foreach ($scores as $subject => $score) {
-            $scores[$subject] = $score * $total;
+        if ($sum > 0) {
+            foreach ($scores as $subject => $score) {
+                $scores[$subject] = $score / $sum;
+            }
+        } else {
+            // Tratar caso especial quando a soma das pontuações é 0
+            $numCategories = count($scores);
+            $defaultProbability = 1 / $numCategories;
+            $totalDefaultProbability = $defaultProbability * $numCategories;
+
+            foreach ($scores as $subject => $score) {
+                $scores[$subject] = $defaultProbability;
+            }
+
+            // Distribuir a probabilidade restante uniformemente entre as categorias
+            $remainingProbability = 1 - $totalDefaultProbability;
+            $additionalProbability = $remainingProbability / $numCategories;
+
+            foreach ($scores as $subject => $score) {
+                $scores[$subject] += $additionalProbability;
+            }
         }
 
         arsort($scores);
@@ -63,7 +81,58 @@ class Naive_Bayes
     private function clean($str)
     {
         $str = strtolower($str);
-        $str = strtr($str, ['á' => 'a', 'à' => 'a', 'ã' => 'a', 'â' => 'a', 'ä' => 'a', 'Á' => 'A', 'À' => 'A', 'Ã' => 'A', 'Â' => 'A', 'Ä' => 'A', 'é' => 'e', 'è' => 'e', 'ê' => 'e', 'ë' => 'e', 'É' => 'E', 'È' => 'E', 'Ê' => 'E', 'Ë' => 'E', 'í' => 'i', 'ì' => 'i', 'î' => 'i', 'ï' => 'i', 'Í' => 'I', 'Ì' => 'I', 'Î' => 'I', 'Ï' => 'I', 'ó' => 'o', 'ò' => 'o', 'õ' => 'o', 'ô' => 'o', 'ö' => 'o', 'Ó' => 'O', 'Ò' => 'O', 'Õ' => 'O', 'Ô' => 'O', 'Ö' => 'O', 'ú' => 'u', 'ù' => 'u', 'û' => 'u', 'ü' => 'u', 'Ú' => 'U', 'Ù' => 'U', 'Û' => 'U', 'Ü' => 'U', 'ñ' => 'n', 'Ñ' => 'N']);
+        $str = strtr($str, [
+            'á' => 'a',
+            'à' => 'a',
+            'ã' => 'a',
+            'â' => 'a',
+            'ä' => 'a',
+            'Á' => 'A',
+            'À' => 'A',
+            'Ã' => 'A',
+            'Â'
+            => 'A',
+            'Ä' => 'A',
+            'é' => 'e',
+            'è' => 'e',
+            'ê' => 'e',
+            'ë' => 'e',
+            'É' => 'E',
+            'È' => 'E',
+            'Ê' => 'E',
+            'Ë' => 'E',
+            'í'
+            => 'i',
+            'ì' => 'i',
+            'î' => 'i',
+            'ï' => 'i',
+            'Í' => 'I',
+            'Ì' => 'I',
+            'Î' => 'I',
+            'Ï' => 'I',
+            'ó' => 'o',
+            'ò' => 'o',
+            'õ'
+            => 'o',
+            'ô' => 'o',
+            'ö' => 'o',
+            'Ó' => 'O',
+            'Ò' => 'O',
+            'Õ' => 'O',
+            'Ô' => 'O',
+            'Ö' => 'O',
+            'ú' => 'u',
+            'ù' => 'u',
+            'û'
+            => 'u',
+            'ü' => 'u',
+            'Ú' => 'U',
+            'Ù' => 'U',
+            'Û' => 'U',
+            'Ü' => 'U',
+            'ñ' => 'n',
+            'Ñ' => 'N'
+        ]);
         return $str;
     }
 
